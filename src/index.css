@@ -1,0 +1,138 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* SiPosyandu Design System - Green Health Theme */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 145 60% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 145 60% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 145 60% 10%;
+
+    --primary: 145 63% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 145 40% 96%;
+    --secondary-foreground: 145 63% 30%;
+
+    --muted: 145 30% 96%;
+    --muted-foreground: 145 20% 45%;
+
+    --accent: 160 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 145 30% 90%;
+    --input: 145 30% 90%;
+    --ring: 145 63% 42%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 145 50% 97%;
+    --sidebar-foreground: 145 60% 15%;
+    --sidebar-primary: 145 63% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 145 40% 94%;
+    --sidebar-accent-foreground: 145 63% 30%;
+    --sidebar-border: 145 30% 90%;
+    --sidebar-ring: 145 63% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-health {
+    background: linear-gradient(135deg, hsl(145 63% 42%) 0%, hsl(160 60% 45%) 100%);
+  }
+  
+  .gradient-health-soft {
+    background: linear-gradient(135deg, hsl(145 40% 96%) 0%, hsl(160 40% 96%) 100%);
+  }
+  
+  .card-shadow {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 0 3px rgba(0,0,0,0.02);
+  }
+  
+  .card-shadow-hover {
+    box-shadow: 0 10px 40px -4px rgba(0, 0, 0, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .glass {
+    @apply bg-white backdrop-blur-md border border-slate-100 shadow-sm;
+  }
+
+  .glass-dark {
+    @apply bg-emerald-950/70 backdrop-blur-md border border-emerald-800/40 shadow-sm;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500;
+  }
+
+  .btn-3d {
+    @apply relative transition-all duration-100 active:translate-y-1 hover:-translate-y-0.5;
+    box-shadow: 0 5px 0 0 rgba(5, 150, 105, 0.8), 0 10px 20px -5px rgba(16, 185, 129, 0.3);
+  }
+
+  .btn-3d:active {
+    box-shadow: 0 1px 0 0 rgba(5, 150, 105, 0.8), 0 4px 6px -1px rgba(16, 185, 129, 0.1);
+  }
+
+  .btn-3d-secondary {
+    @apply relative transition-all duration-100 active:translate-y-0.5;
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-3d-secondary:active {
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .input-date-clean::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+  }
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+}
